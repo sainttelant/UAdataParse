@@ -53,8 +53,9 @@ class Track_Dataset(data.Dataset):
             labels,metadata = self.parse_labels(label_list[i])
             #print("labels' numbers:",len(labels))
             if len(images)!=len(labels):
-                #print("find nums not to be equal,and write the names!!!")
-                #print("i:%d,name:%s" % (i, track_list[i]))
+                print("find nums not to be equal,and write the names!!!")
+                print("i:%d,folder of image:%s, images'num:%d, labels'num:%d" \
+                     % (i, track_list[i],len(images),len(labels)))
                 continue
             else:
                 self.track_metadata.append(metadata)
@@ -72,6 +73,8 @@ class Track_Dataset(data.Dataset):
 
                 # index of first frame
                 if i < len(track_list) - 1:
+                    print("i",i)
+                    #print("images:",images)
                     self.track_offsets.append(len(images)+self.track_offsets[i])
 
             # for keeping track of things
