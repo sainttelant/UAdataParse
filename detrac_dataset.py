@@ -110,6 +110,8 @@ class Track_Dataset(data.Dataset):
         """get next frame label, and a bit of other info from current track"""
                 
         self.cur_frame = self.cur_frame + 1
+        print("current_frame:",self.cur_frame)
+        print("all_data's size:",len(self.all_data))
         cur = self.all_data[self.cur_frame]
         im = Image.open(cur['image'])
         #print("pics name in next:",cur["image"])
