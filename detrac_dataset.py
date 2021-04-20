@@ -220,9 +220,12 @@ class Track_Dataset(data.Dataset):
 
             # 准备写入新的数据：
             pinjie = names.split("/")
-            newfolder = pinjie[0] + "/" + pinjie[1] + "/" + "fillbackImg" + "/" + pinjie[2].split("\\")[1]
-            newname = newfolder + "/" + pinjie[2].split(".")[0].split("\\")[-1] + ".jpg"
-            #print("newname:", newname)
+            print("pinjie:",pinjie)
+            print("pinjie'size",len(pinjie))
+            #newfolder = pinjie[0] + "/" + pinjie[1] + "/" + "fillbackImg" + "/" + pinjie[2].split("\\")[1]
+            newfolder = pinjie[0] + "/" + pinjie[1] + "/" + "fillbackImg" + "/" + pinjie[3]
+            newname = newfolder + "/" + pinjie[4].split(".")[0].split("\\")[-1] + ".jpg"
+            print("newname:", newname)
             if os.path.exists(newfolder) == False:
                 os.makedirs(newfolder)
             if os.path.exists(newname) == True:
